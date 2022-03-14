@@ -24,7 +24,7 @@ today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 
-var start = new Date(1968, 2, 10);
+var start = new Date(1961, 5, 25); // default date, let's say... Ricky Gervais :)
 var lifeExp = 87; // life expectancy in years
 
 function pad(num, size) {
