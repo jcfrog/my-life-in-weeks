@@ -70,7 +70,7 @@ function updateDisplay() {
 
 
 
-    var bDate = `${pad(start.getDate(), 2)} ${mois[start.getMonth()]} ${start.getFullYear()}, c'était un ${jours[start.getDay()]}`;
+    var bDate = `${pad(start.getDate(), 2)} ${mois[start.getMonth()]} ${start.getFullYear()} <a href='choosedate.html'>🖊️</a>, c'était un ${jours[start.getDay()]}`;
     $("#mylife").append("<p>Date de naissance : " + bDate + "</p>");
 
     var now = new Date();
@@ -81,7 +81,7 @@ function updateDisplay() {
     var nbExpDays = Math.round((lastDay.getTime() - start.getTime()) / (oneDay));
     console.log(nbExpDays);
 
-    $("#mylife").append("<p>Nombre de jours vécus : " + diffDays + "</p>");
+    $("#mylife").append("<p>Nombre de jours vécus : " + diffDays + " <span class='dimmed'> / "+nbExpDays+" = "+(Math.floor(diffDays/nbExpDays*1000)/10)+"%, reste "+(nbExpDays-diffDays)+"</span></p>");
     var age = 0;
     var nbDaysInWeek = 0;
     var numweek = 1;

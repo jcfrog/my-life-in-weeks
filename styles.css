@@ -99,3 +99,7 @@ html{
 h1{
     font-size: 18px;
 }
+
+.dimmed{
+    color :rgb(168, 168, 168);
+}

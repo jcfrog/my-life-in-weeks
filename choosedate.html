@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script src="xtras/jquery.min.js" type='text/javascript'></script>
+    <script src="xtras/mylife.js" type='text/javascript'></script>
+    <title>Semaines d'une vie</title>
+</head>
+
+<style>
+    #goforit{
+        background-color: rgb(47, 132, 211);
+        padding : 5px 10px;
+        color: white;
+        border-radius: 3px;
+        display: inline-block;
+        cursor: pointer;
+    }
+    #h{
+        height : 50px;
+    }
+</style>
+<body>
+    <div id="h"></div>
+    <div id="container">
+        <h1>Semaines d'une vie</h1>
+        <p>
+            Date de naissance : <input type="date" name="bdate" id="bdate">
+        </p>
+        <p>
+            Espérance de vie : <input type="number" name="lexp" id="lexp" size=2 > 
+            <div style='display:inline-block;cursor:pointer' id="female">♀️</div>
+            <div style='display:inline-block;cursor:pointer' id="male">♂️</div> 
+            <div style='display:inline-block;cursor:pointer' id="alien">👽</div>            
+        </p>
+        <p> <div id="goforit">Afficher semaines</div> </p>
+    </div>
+    <script>
+        $(document).ready( () => {
+            $("#male").on("click", () => {$("#lexp").val(80)});
+            $("#female").on("click", () => {$("#lexp").val(86)});
+            $("#alien").on("click", () => {$("#lexp").val(129)});
+
+            $("#goforit").on("click",(e)=>{
+                var bd = $("#bdate").val().split("-");
+                bd = bd[2]+"-"+bd[1]+"-"+bd[0];
+                window.location.href = "index.html?bdate="+bd+"&lexp="+$("#lexp").val();
+            });
+
+
+            var day = ("0" + start.getDate()).slice(-2);
+            var month = ("0" + (start.getMonth() + 1)).slice(-2);
+            $("#bdate").val(start.getFullYear()+"-"+(month)+"-"+(day));
+            $("#lexp").val(lifeExp);
+        });
+    </script>
+</body>
+
+</html>
