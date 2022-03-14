@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./font/MPLUS2-VariableFont_wght.ttf) format('truetype');
+}
+
+html{
+    font-family: 'ubuntu', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;;
+}
+
+#help {
+    font-size: 10px;
+    float: right;
+    border-radius: 50%;
+    width : 1rem;
+    height : 1rem;
+    background-color: #888;
+    color: white;
+    cursor: pointer;
+}
+
+#container {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.jcweek {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    margin: 0 1px;
+    border-radius: 2px;
+    /*border-bottom: 1px solid grey;*/
+}
+
+.jcweek1 {
+    background-color: rgb(209, 209, 209);
+    /*width : 1px;*/
+}
+
+.jcweek2 {
+    background-color: rgb(168, 168, 168);
+    /*width : 2px;*/
+}
+
+.jcweek3 {
+    background-color: rgb(255, 0, 170);
+    height: 3px;
+}
+
+.jcweek4 {
+    background-color: rgb(0, 217, 255);
+    height: 4px;
+}
+
+.jcweek5 {
+    background-color: rgb(255, 115, 0);
+    height: 5px;
+}
+
+.jcweek6 {
+    background-color: rgb(255, 15, 55);
+    height: 6px;
+}
+
+.age , .year{
+    font-size: 10px;
+    width: 20px;
+    display: inline-block;
+    text-align: right;
+    padding: 0px 10px;
+
+}
+
+#mylife {
+    line-height: 7px;
+}
+
+.week-spacer {
+    width: 3px;
+    display: inline-block;
+}
+.vert-spacer{
+    height:5px;
+    width : 100%;
+}
+
+.emptyweek {
+    background-color: white;
+    border: #bbb thin solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+h1{
+    font-size: 18px;
+}
