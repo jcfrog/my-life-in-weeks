@@ -1,3 +1,5 @@
+![illustration](i/illutration.png)
+
 Inspiré des posters vendus pour illustrer les semaines d'un vie : ["My Life In Weeks"](https://duckduckgo.com/?q=my+life+in+weeks+poster&t=h_&iar=images&iax=images&ia=images)
 
 # Paramètres d'URL
