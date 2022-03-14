@@ -126,6 +126,3 @@ function updateDisplay() {
 
 }
 
-$(document).ready(() => {
-    updateDisplay();
-});
