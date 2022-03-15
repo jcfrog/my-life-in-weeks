@@ -3,7 +3,7 @@ var mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "A
 var jours = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
 
 
-function getNbJours(month, year) {
+function getNbDays(month, year) {
 
     if (month != 1) return nbJours[month];
 
@@ -70,7 +70,7 @@ function updateDisplay() {
 
 
 
-    var bDate = `${pad(start.getDate(), 2)} ${mois[start.getMonth()]} ${start.getFullYear()} <a href='choosedate.html'>🖊️</a>, c'était un ${jours[start.getDay()]}`;
+    var bDate = `${pad(start.getDate(), 2)} ${mois[start.getMonth()]} ${start.getFullYear()} <a href='choosedate.html' style='text-decoration:none'>🖊️</a>, c'était un ${jours[start.getDay()]}`;
     $("#mylife").append("<p>Date de naissance : " + bDate + "</p>");
 
     var now = new Date();
@@ -90,7 +90,12 @@ function updateDisplay() {
         if (i < diffDays) return "jcweek" + nbDaysInWeek;
         return "emptyweek";
     }
-    for (var i = 0; i < nbExpDays + 1; i++) {
+
+    start.setHours(12); // to avoid time changing days problems
+    if ((start.getMonth()==1) && (start.getDate()==29)){ // to avoid feb 29th birthdays 
+        start.setDate(28);
+    }
+    for (var i = 1; i < nbExpDays + 1; i++) {
         var curDay = new Date(start.getTime() + (i * oneDay));
         nbDaysInWeek++;
 
@@ -102,15 +107,17 @@ function updateDisplay() {
                 $("#mylife").append("<div class='week-spacer'></div>");
             }
         }
-
-        if (i > 0 && curDay.getDate() == start.getDate() && curDay.getMonth() == start.getMonth()) {
+        if (i > 0 && 
+                curDay.getMonth() == start.getMonth()&&
+                curDay.getDate() == start.getDate() 
+            ) {
             age++;
 
             if (nbDaysInWeek > 0) {
                 $("#mylife").append("<div class='jcweek " + getClass(i) + "' alt='Semaine " + numweek + "'></div>");
-                nbDaysInWeek = 0;
-                numweek = 1;
             }
+            nbDaysInWeek = 0;
+            numweek = 1;
             $("#mylife").append("<div class='year'>" + curDay.getFullYear() + "</div>");
             $("#mylife").append("<br>");
             if (age % 10 == 0) {
